@@ -1,91 +1,71 @@
-<!-- MAINTENANCE PAGE
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experiment - Temporarily Unavailable</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background: #f5f5f5;
-      padding: 20px;
-    }
-    .message {
-      background: white;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 600px;
-      text-align: center;
-    }
-    h1 { color: #333; margin-bottom: 20px; }
-    p { color: #666; line-height: 1.6; }
-  </style>
-</head>
-<body>
-  <div class="message">
-    <h1>🔧 Maintenance in Progress</h1>
-    <p><strong>English:</strong> This experiment is temporarily unavailable for maintenance. Please check back later. We apologize for any inconvenience.</p>
-    <p><strong>日本語:</strong> 現在メンテナンス中です。後ほどお試しください。ご不便をおかけして申し訳ございません。</p>
-    <p><strong>简体中文:</strong> 实验正在维护中，请稍后再试。给您带来不便，敬请谅解。</p>
-    <p><strong>繁體中文:</strong> 實驗正在維護中，請稍後再試。造成不便，敬請見諒。</p>
-    <p><strong>한국어:</strong> 현재 유지보수 중입니다. 나중에 다시 시도해 주세요. 불편을 끼쳐 드려 죄송합니다.</p>
-  </div>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>音声知覚実験 Voice Perception Study</title>
-  <script src="https://unpkg.com/jspsych@8.2.2"></script>
-  <link href="https://unpkg.com/jspsych@8.2.2/css/jspsych.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese Speech Perception Study</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f5f5f5;
+    }
 
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-  <script src="https://unpkg.com/@jspsych/plugin-preload@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-fullscreen@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-video-button-response@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-audio-button-response@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-survey-text@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-audio-keyboard-response@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.1.0"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-call-function@2.1.0"></script>
+    .notice {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+
+    .notice strong {
+      color: #856404;
+    }
+
+    .notice p {
+      color: #856404;
+      margin: 10px 0 0 0;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #5568d3;
+    }
+  </style>
 </head>
 <body>
-  <body>
-  <!-- Archive notice banner -->
-  <div id="archive-banner" style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #fff3cd;
-    border-bottom: 3px solid #ffc107;
-    padding: 15px;
-    text-align: center;
-    z-index: 9999;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  ">
-    <strong>📦 Archived Experiment - Demo Mode</strong>
-    <span style="margin-left: 15px;">Data collection completed January 2026. Responses are not saved.</span>
-  </div>
+  <div class="container">
+    <div class="notice">
+      <strong>⚠️ Important Notice:</strong>
+      <p>This experiment is archived and no longer collecting data. Data collection was completed in January 2026. You can explore the experiment interface as a demo, but your responses will not be saved.</p>
+    </div>
 
-  <!-- Your existing content continues here -->
-  <div id="jspsych-target"></div>
-  <script src="main.js"></script>
+    <a href="experiment.html" class="button">View Experiment Demo</a>
+  </div>
 </body>
 </html>
