@@ -1533,35 +1533,56 @@ const afterNativeQuestionTrial = {
   ]
 }
 
+// const thankYouTrial = {
+//   type: jsPsychHtmlKeyboardResponse,
+//   stimulus: function () {
+//     return `
+//       <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+//         <div id="save-status" style="font-size: 20px; margin-bottom: 20px; padding: 20px; background: #f0f0f0; border-radius: 8px;">
+//           <div style="font-size: 40px; margin-bottom: 10px;">💾</div>
+//           <div>Saving your data...</div>
+//           <div style="font-size: 14px; color: #666; margin-top: 10px;">Please wait...</div>
+//         </div>
+//         <div id="thank-you-message" style="display: none;">
+//           <p>${translations[lang].final_thanks}</p>
+//           <p>${translations[lang].close_window}</p>
+//         </div>
+//       </div>
+//     `;
+//   },
+//   choices: "NO_KEYS",
+//   trial_duration: null, // Don't auto-end
+//   on_start: function () {
+//     const dataToSave = {
+//       participant_id: participantID,
+//       data: jsPsych.data.get().json(),
+//       complete: true,
+//       timestamp: new Date().toISOString()
+//     };
+
+//     console.log('🎯 Final save starting...');
+//     console.log('📊 Total trials:', jsPsych.data.get().count());
+
 const thankYouTrial = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
     return `
       <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-        <div id="save-status" style="font-size: 20px; margin-bottom: 20px; padding: 20px; background: #f0f0f0; border-radius: 8px;">
-          <div style="font-size: 40px; margin-bottom: 10px;">💾</div>
-          <div>Saving your data...</div>
-          <div style="font-size: 14px; color: #666; margin-top: 10px;">Please wait...</div>
-        </div>
-        <div id="thank-you-message" style="display: none;">
-          <p>${translations[lang].final_thanks}</p>
-          <p>${translations[lang].close_window}</p>
-        </div>
+        <h2>Thank You!</h2>
+        <p>${translations[lang].final_thanks}</p>
+        <p style="background: #e3f2fd; padding: 15px; border-radius: 5px; margin-top: 20px;">
+          <strong>Note:</strong> This is an archived demo. Your responses were not saved.
+        </p>
+        <p>${translations[lang].close_window}</p>
       </div>
     `;
   },
   choices: "NO_KEYS",
-  trial_duration: null, // Don't auto-end
   on_start: function () {
-    const dataToSave = {
-      participant_id: participantID,
-      data: jsPsych.data.get().json(),
-      complete: true,
-      timestamp: new Date().toISOString()
-    };
-
-    console.log('🎯 Final save starting...');
-    console.log('📊 Total trials:', jsPsych.data.get().count());
+    // Archive mode - no data submission
+    console.log("Demo mode - data not submitted");
+  }
+};
 
     // Try primary method
     fetch("https://research001-4ba740c5cac1.herokuapp.com/submit", {

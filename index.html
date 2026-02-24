@@ -66,6 +66,28 @@
   <script src="https://unpkg.com/@jspsych/plugin-call-function@2.1.0"></script>
 </head>
 <body>
+  <body>
+  <!-- Archive notice banner -->
+  <div id="archive-banner" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff3cd;
+    border-bottom: 3px solid #ffc107;
+    padding: 15px;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  ">
+    <strong>📦 Archived Experiment - Demo Mode</strong>
+    <span style="margin-left: 15px;">Data collection completed January 2026. Responses are not saved.</span>
+  </div>
+
+  <!-- Add spacing so content isn't hidden under banner -->
+  <div style="height: 60px;"></div>
+
+  <!-- Your existing content continues here -->
   <div id="jspsych-target"></div>
   <script src="main.js"></script>
 </body>
